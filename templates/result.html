@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home - Lung Cancer Prediction</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('https://img.freepik.com/free-photo/covid-concept-with-copy-space_23-2148911558.jpg?t=st=1744782099~exp=1744785699~hmac=d392b9f8b8d1ef83d896ee440063499d575520467aec64f252f0045a451c27df&w=1380');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      color: white;
+    }
+
+    .navbar {
+      background-color: black;
+    }
+
+    .navbar-brand {
+      font-family: 'Helvetica', sans-serif;
+      font-weight: 700;
+      font-size: 1.75rem;
+      letter-spacing: 1px;
+      color: #f0f0f0;
+      text-transform: uppercase;
+    }
+
+    .container {
+      max-width: 90%;
+    }
+
+    .card {
+      background: radial-gradient(circle, #f5b0c9 0%, #e77ea5 100%);
+      color: #8b0436;
+      border-radius: 15px;
+    }
+
+    #dos, #donts {
+      background: radial-gradient(circle, #f5b0c9 0%, #e77ea5 100%);
+      color: #8b0436;
+      padding: 20px;
+      border-radius: 15px;
+      margin: 20px auto;
+      width: 80%;
+      box-shadow: 0 4px 8px rgba(255, 0, 0, 0.4);
+    }
+
+    /* Animation */
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Button Hover Effects */
+    .btn:hover {
+      opacity: 0.85;
+      transform: scale(1.03);
+      transition: 0.3s ease;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 576px) {
+      .card {
+        padding: 1rem;
+      }
+      .btn {
+        margin-bottom: 10px;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">Lung Cancer Prediction</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+        <li class="nav-item"><a class="nav-link" href="/predict">Predict</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="card p-4 shadow-lg">
+      <div class="text-center">
+        <h2 class="mb-4">Prediction Result</h2>
+        <p><strong>Detected Condition:</strong> {{ predicted_class }}</p>
+        <img src="{{ image_path }}" class="img-fluid rounded shadow" style="max-height: 400px;" alt="Uploaded X-ray">
+
+        <div class="mt-4 text-center">
+          <button class="btn btn-success mr-2" onclick="showSection('dos')">Show Dos</button>
+          <button class="btn btn-danger mr-2" onclick="showSection('donts')">Show Don'ts</button>
+          <button class="btn btn-primary" onclick="resetPage()">Reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dos Section -->
+  <div id="dos" style="display: none;">
+    <h4 class="text-success">Dos for {{ predicted_class }}</h4>
+    <ul>
+      {% if predicted_class == 'adenocarcinoma' %}
+        <li>Quit smoking immediately to prevent further lung damage.</li>
+        <li>Maintain a diet rich in antioxidants.</li>
+        <li>Attend regular oncologist appointments.</li>
+        <li>Engage in light physical activity.</li>
+        <li>Follow your treatment regimen strictly.</li>
+        <li>Practice breathing exercises.</li>
+        <li>Stay emotionally supported.</li>
+        <li>Keep your living space pollutant-free.</li>
+        <li>Maintain a positive attitude toward recovery.</li>
+      {% elif predicted_class == 'large.cell.carcinoma' %}
+        <li>Follow your full treatment plan.</li>
+        <li>Stay active and eat well.</li>
+        <li>Rest adequately and stay hydrated.</li>
+        <li>Join a support group if needed.</li>
+        <li>Maintain a clean and peaceful environment.</li>
+      {% elif predicted_class == 'normal' %}
+        <li>Continue regular checkups.</li>
+        <li>Exercise regularly.</li>
+        <li>Avoid polluted environments.</li>
+        <li>Eat a healthy, balanced diet.</li>
+        <li>Practice breathing exercises.</li>
+        <li>Stay hydrated and cautious during flu seasons.</li>
+      {% elif predicted_class == 'squamous.cell.carcinoma' %}
+        <li>Consult an oncologist for proper treatment.</li>
+        <li>Avoid smoking and air pollutants.</li>
+        <li>Practice yoga or meditation.</li>
+        <li>Report symptoms promptly to your doctor.</li>
+        <li>Join a support community.</li>
+      {% endif %}
+    </ul>
+  </div>
+
+  <!-- Don'ts Section -->
+  <div id="donts" style="display: none;">
+    <h4 class="text-danger">Don'ts for {{ predicted_class }}</h4>
+    <ul>
+      {% if predicted_class == 'adenocarcinoma' %}
+        <li>Don’t ignore persistent cough or chest pain.</li>
+        <li>Don’t skip medications or appointments.</li>
+        <li>Avoid secondhand smoke.</li>
+        <li>Don’t self-medicate without advice.</li>
+        <li>Stay away from polluted environments.</li>
+        <li>Don’t isolate yourself emotionally.</li>
+      {% elif predicted_class == 'large.cell.carcinoma' %}
+        <li>Don’t miss treatments or checkups.</li>
+        <li>Don’t smoke or overexert.</li>
+        <li>Don’t rely solely on internet advice.</li>
+      {% elif predicted_class == 'normal' %}
+        <li>Don’t start smoking.</li>
+        <li>Don’t ignore checkups or symptoms.</li>
+        <li>Don’t stay in poorly ventilated areas.</li>
+      {% elif predicted_class == 'squamous.cell.carcinoma' %}
+        <li>Don’t continue using tobacco.</li>
+        <li>Don’t expose yourself to asbestos or toxins.</li>
+        <li>Don’t miss medical consultations.</li>
+        <li>Don’t ignore serious symptoms like coughing blood.</li>
+      {% endif %}
+    </ul>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    function showSection(sectionId) {
+      // Hide both
+      document.getElementById('dos').style.display = 'none';
+      document.getElementById('donts').style.display = 'none';
+
+      // Show selected with animation
+      const section = document.getElementById(sectionId);
+      section.classList.remove('fade-in'); // reset animation
+      void section.offsetWidth; // trigger reflow
+      section.style.display = 'block';
+      section.classList.add('fade-in');
+    }
+
+    function resetPage() {
+      document.getElementById('dos').style.display = 'none';
+      document.getElementById('donts').style.display = 'none';
+      // Optional: Add a loading spinner before reload
+      document.body.innerHTML += `<div class="text-center mt-3"><div class="spinner-border text-light" role="status"><span class="sr-only">Loading...</span></div></div>`;
+      setTimeout(() => location.reload(), 500);
+    }
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

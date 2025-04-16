@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Lung Cancer Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.freepik.com/free-photo/covid-concept-with-copy-space_23-2148911558.jpg?t=st=1744782099~exp=1744785699~hmac=d392b9f8b8d1ef83d896ee440063499d575520467aec64f252f0045a451c27df&w=1380');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: white;
+        }
+        .navbar {
+            width: 100%;
+            background-color: black;
+        }
+        .navbar-brand {
+            font-family: 'Helvetica', sans-serif;
+            font-weight: 700;
+            font-size: 1.75rem;
+            letter-spacing: 1px;
+            color: #f0f0f0;
+            text-transform: uppercase;
+        }
+        .container {
+            max-width: 70%;
+            padding: 0 15px;
+            margin-top: 40px;
+        }
+        .content-container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .carousel-inner img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+                .carousel-caption {
+            bottom: 30px;
+        }
+
+        .carousel-caption h5 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .carousel-caption p {
+            font-size: 1rem;
+            color: #f8f9fa;
+        }
+
+        .bg-opacity-50 {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark w-100">
+        <a class="navbar-brand" href="#">Lung Cancer Prediction</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="/predict">Predict</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Carousel -->
+    <div class="container mt-4">
+        <div id="lungCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#lungCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#lungCarousel" data-slide-to="1"></li>
+                <li data-target="#lungCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://img.freepik.com/premium-photo/doctor-protective-mask-looks-picture-patients-lungs_157945-5.jpg?uid=R144199022&ga=GA1.1.1476552211.1724764652&semt=ais_hybrid&w=740" class="d-block w-100" alt="Lung Image 1">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                        <h5>Breathe Easy, Live Strong</h5>
+                        <p>Early detection of lung cancer saves lives.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://img.freepik.com/free-photo/still-life-sustainable-lifestyle-elements-arrangement_23-2148997051.jpg?t=st=1744611863~exp=1744615463~hmac=d5469f42bff9e25d9fdcbeec457d77040fa7b8d8b5aa6d93408325b237acffec&w=900" class="d-block w-100" alt="Lung Image 2">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                        <h5>Healthy Lungs, Healthy Life</h5>
+                        <p>Protect your breath—it's your power.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://img.freepik.com/premium-photo/paper-lungs-medical-stethoscope-blue-background-world-tuberculosis-day-pneumonia-respir_603656-8080.jpg?w=996" class="d-block w-100" alt="Lung Image 3">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                        <h5>Scan. Detect. Survive.</h5>
+                        <p>Don’t wait. Get your lungs checked today.</p>
+                    </div>
+                </div>
+            </div>
+            
+    </div>
+
+    <!-- Bootstrap JS (required for carousel) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

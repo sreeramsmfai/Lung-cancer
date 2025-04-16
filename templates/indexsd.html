@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Lung Cancer Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.freepik.com/free-photo/hands-with-lungs-shape_23-2148533078.jpg?t=st=1731912641~exp=1731916241~hmac=b9e8e87c741c95f45c07c0e83dd6b48738f461889a2414cf82cfcadf2f7b447c&w=740');
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Ensure the background covers the entire screen height */
+            color: white; /* Text color to stand out against the background */
+        }
+        .navbar {
+            width: 100%;
+            background-color: black;
+        }
+        .navbar-brand {
+            font-family: 'Helvetica', sans-serif; /* Elegant font family */
+            font-weight: 700; /* Bold text */
+            font-size: 1.75rem; /* Larger text size */
+            letter-spacing: 1px; /* Slight spacing between letters */
+            color: #f0f0f0; /* Light color for better contrast */
+            text-transform: uppercase; /* Uppercase for a more formal look */
+        }
+        .container {
+            max-width: 50%;
+            padding: 0 15px;
+            margin-top: 100px;
+        }
+        .content-container {
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 100px; /* Adjust space from the top */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for a lifted effect */
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        .mt-5 {
+            margin-top: 5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Full-width Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark w-100">
+        <a class="navbar-brand" href="#">Lung Cancer Prediction</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/predict">Predict</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Content Container -->
+    <div class="container">
+        <div class="content-container">
+            <h1 class="text-center">Welcome to Lung Cancer Prediction</h1>
+<p class="text-center">This web app uses a Vision Transformer (ViT) model to predict lung cancer types based on image data.</p>
+<p class="text-justify">
+    The Lung Cancer Prediction project is a web-based application designed to assist in predicting the likelihood of lung cancer based on medical image data. The core functionality of the system is powered by a Vision Transformer (ViT) model, a cutting-edge deep learning architecture that has demonstrated high performance in image classification tasks. This model analyzes chest X-ray images or other lung-related medical images to classify the type of lung cancer, if present. The web application is built using Flask for the backend and integrates Bootstrap for a responsive and user-friendly frontend. Users can upload an image of the lung scan, and the application processes the image to predict the potential presence of cancer, presenting the results in an easy-to-understand format. The goal of the project is to provide an accessible tool for medical professionals or anyone interested in assessing the risk of lung cancer, supporting timely intervention and treatment. By using state-of-the-art machine learning techniques, this tool aims to contribute to the healthcare sector by providing accurate and reliable predictions that can assist in the early detection of lung cancer.
+</p></div>
+
+    </div>
+</body>
+</html>

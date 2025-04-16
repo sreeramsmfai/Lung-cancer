@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home - Lung Cancer Prediction</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('https://img.freepik.com/free-photo/covid-concept-with-copy-space_23-2148911558.jpg?t=st=1744782099~exp=1744785699~hmac=d392b9f8b8d1ef83d896ee440063499d575520467aec64f252f0045a451c27df&w=1380');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      color: white;
+    }
+
+    .navbar {
+      background-color: black;
+    }
+
+    .navbar-brand {
+      font-family: 'Helvetica', sans-serif;
+      font-weight: 700;
+      font-size: 1.75rem;
+      letter-spacing: 1px;
+      color: #f0f0f0;
+      text-transform: uppercase;
+    }
+
+    .container {
+      max-width: 90%;
+    }
+    .about-container {
+        background: radial-gradient(circle, #f5b0c9 0%, #e77ea5 100%);
+
+      padding: 30px;
+      margin-top: 30px;
+      border-radius: 15px;
+      color: #8b0436;
+      box-shadow: 0 4px 10px rgba(255, 2, 2, 0.5);
+    }
+    .carousel-inner img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">Lung Cancer Prediction</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+        <li class="nav-item"><a class="nav-link" href="/predict">Predict</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Carousel -->
+  <div class="container1">
+  <!-- About Container -->
+  <div class="container">
+    <div class="about-container mt-4">
+      <h2 class="text-center">About This Project</h2>
+      <p>This project uses a Vision Transformer (ViT) model to classify lung X-ray images into:</p>
+      <ul>
+        <li>Adenocarcinoma</li>
+        <li>Large Cell Carcinoma</li>
+        <li>Squamous Cell Carcinoma</li>
+        <li>Normal (Healthy Lungs)</li>
+      </ul>
+      <p style="text-align: justify;">
+        This project is titled &quot;Deep Learning Model For Early Lung Cancer Detection Via
+CT Imaging And Vision Transformer&quot;. The system is developed using HTML, CSS,
+Bootstrap, and JavaScript for the frontend, with a Python backend powered by the Flask
+framework. The goal is to propose an automated system for the early detection of lung cancer by
+leveraging Deep Learning, Image Processing, and the Vision Transformer (ViT) algorithm. A
+dataset of medical images, including various lung cancer types (adenocarcinoma, large cell
+carcinoma, squamous cell carcinoma) and healthy lung tissue, is used for classification. Feature
+extraction is applied to identify essential characteristics of each image. The ViT model, which
+excels at capturing spatial relationships in images, optimizes the classification accuracy. Several
+machine learning models are trained and evaluated with performance metrics such as precision,
+recall, and F1-score. The best-performing model is selected for deployment. A user-friendly
+interface is developed for healthcare professionals to diagnose lung cancer in real-time,
+enhancing diagnostic efficiency and accuracy in clinical settings.
+      </p>
+    </div>
+  </div></div>
+
+  <!-- JS Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
